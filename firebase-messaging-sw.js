@@ -18,6 +18,8 @@ messaging.setBackgroundMessageHandler(function(payload) {
 });
 
 self.addEventListener('notificationclick', function(event) {
+  console.log(event, 23423);
+
   const target = event.notification.data.click_action || '/';
   event.notification.close();
 
