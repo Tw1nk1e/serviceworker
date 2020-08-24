@@ -1,7 +1,7 @@
-self.addEventListener('notificationclose', (event) => {
-  console.log('CLOSE', 99999);
-}, false);
-
+self.addEventListener("notificationclick", function(event) {
+  console.log('notification open, 99999');
+  // log send to server
+});
 
 firebase.initializeApp({
     messagingSenderId: '903136559212'
