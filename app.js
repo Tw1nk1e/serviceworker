@@ -1,10 +1,11 @@
+self.addEventListener('notificationclose', (event) => {
+  console.log('CLOSE', 99999);
+}, false);
+
+
 firebase.initializeApp({
     messagingSenderId: '903136559212'
 });
-
-window.addEventListener('notificationclose', (event) => {
-  console.log('CLOSE', 9999999);
-}, false);
 
 var bt_register = $('#register');
 var bt_delete = $('#delete');
