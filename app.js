@@ -2,7 +2,7 @@ firebase.initializeApp({
     messagingSenderId: '903136559212'
 });
 
-self.addEventListener('notificationclose', (event) => {
+window.addEventListener('notificationclose', (event) => {
   console.log('CLOSE', 9999999);
 }, false);
 
