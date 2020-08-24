@@ -1,21 +1,3 @@
-importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-messaging.js');
-
-firebase.initializeApp({
-  messagingSenderId: '903136559212'
-});
-
-const messaging = firebase.messaging();
-
-// Customize notification handler
-messaging.setBackgroundMessageHandler(function(payload) {
-  console.log('Handling background message', payload);
-
-  // Copy data object to get parameters in the click handler
-  payload.data.data = JSON.parse(JSON.stringify(payload.data));
-
-  return self.registration.showNotification(payload.data.title, payload.data);
-});
 
 self.addEventListener('notificationclose', (event) => {
   console.log('CLOSE', 34343);
@@ -42,4 +24,23 @@ self.addEventListener('notificationclick', function(event) {
 
     return clients.openWindow(target);
   }));
+});
+
+importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-messaging.js');
+
+firebase.initializeApp({
+  messagingSenderId: '903136559212'
+});
+
+const messaging = firebase.messaging();
+
+// Customize notification handler
+messaging.setBackgroundMessageHandler(function(payload) {
+  console.log('Handling background message', payload);
+
+  // Copy data object to get parameters in the click handler
+  payload.data.data = JSON.parse(JSON.stringify(payload.data));
+
+  return self.registration.showNotification(payload.data.title, payload.data);
 });
