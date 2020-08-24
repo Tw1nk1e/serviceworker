@@ -1,7 +1,3 @@
-self.addEventListener("notificationclick", function(event) {
-  console.log('notification open');
-});
-
 firebase.initializeApp({
     messagingSenderId: '903136559212'
 });
