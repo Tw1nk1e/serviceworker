@@ -1,7 +1,7 @@
-self.addEventListener("notificationclick", function(event) {
-  console.log('notification open, 99999');
-  // log send to server
-});
+notification.onclick = function(event) {
+  event.preventDefault(); // prevent the browser from focusing the Notification's tab
+  console.log(event, 34343)
+}
 
 firebase.initializeApp({
     messagingSenderId: '903136559212'
