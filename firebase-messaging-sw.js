@@ -1,3 +1,7 @@
+self.addEventListener('notificationclose', (event) => {
+  console.log('CLOSE', 7777777);
+}, false);
+
 importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/3.7.2/firebase-messaging.js');
 
