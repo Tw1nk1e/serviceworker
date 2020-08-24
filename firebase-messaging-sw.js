@@ -17,6 +17,10 @@ messaging.setBackgroundMessageHandler(function(payload) {
   return self.registration.showNotification(payload.data.title, payload.data);
 });
 
+self.addEventListener('notificationclose', (event) => {
+  console.log('CLOSE');
+}, false);
+
 self.addEventListener('notificationclick', function(event) {
   console.log(event, 23423);
 
