@@ -18,11 +18,11 @@ messaging.setBackgroundMessageHandler(function(payload) {
 });
 
 self.addEventListener('notificationclose', (event) => {
-  console.log('CLOSE');
+  console.log('CLOSE', 34343);
 }, false);
 
 self.addEventListener('notificationclick', function(event) {
-  console.log(event, 23423);
+  console.log(event, 1111111);
 
   const target = event.notification.data.click_action || '/';
   event.notification.close();
